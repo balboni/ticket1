@@ -3,16 +3,13 @@
 @import "font-awesome";
 
 
-.page-header {
+header {
+	@extend .page-header;
 	position: relative;
-	padding-bottom:  0px;
+	padding-bottom: 0px;
 
 	&:first-child {
 		margin-top: 20px;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		max-width: 55%;
 	}
 }
 
@@ -26,36 +23,37 @@ ul.actions {
 	text-align: right;
 }
 
-a.new {
+a.new, a.edit, a.delete {
 	@extend .btn;
-	@extend .btn-success;
 
 	&:before {
 		font-family: "FontAwesome";
-		@extend .fa-plus;
 		padding-right: 0.5em;
+	}
+}
+
+a.new {
+	@extend .btn-success;
+
+	&:before {
+		@extend .fa-plus;
+		
 	}
 }
 
 a.edit {
-	@extend .btn;
 	@extend .btn-primary;
 
 	&:before {
-		font-family: "FontAwesome";
 		@extend .fa-pencil;
-		padding-right: 0.5em;
 	}
 }
 
 a.delete {
-	@extend .btn;
 	@extend .btn-danger;
 
 	&:before {
-		font-family: "FontAwesome";
 		@extend .fa-trash;
-		padding-right: 0.5em;
 	}
 }
 
