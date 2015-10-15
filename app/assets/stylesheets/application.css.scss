@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "projects";
+@import "responsive";
 
 
 header {
@@ -22,14 +23,13 @@ form {
 	max-width: 500px;
 }
 
+@media(max-width: 500px) {
+p { color: red }
+}
+
 ul.actions {
 	@extend .list-unstyled;
 	@extend .list-inline;
-	position: absolute;
-	bottom:  -2px;
-	right: 2px;
-	max-width: 45%;
-	text-align: right;
 }
 
 a.new, a.edit, a.delete {
