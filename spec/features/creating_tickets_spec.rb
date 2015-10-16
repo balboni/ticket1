@@ -24,5 +24,15 @@ scenario "when providing invalid attributes" do
 	expect(page).to have_content "Description can't be blank"
 end
 
+scenario "with an invalid description" do
+	fill_in "Name", with: "Non-standards Compliance"
+	fill_in "Description", with: "It sucks"
+	click_button "Create Ticket"
+
+	expect(page).to have_content "Ticket has not been created."
+	expect(page).to have_content "Description is too short"
+end
+
+
 	
 end
